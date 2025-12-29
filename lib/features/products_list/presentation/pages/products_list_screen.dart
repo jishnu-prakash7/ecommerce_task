@@ -59,7 +59,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
         surfaceTintColor: Colors.white,
         title: CustomText(
           fontSize: sizeHelper.getTextSize(16),
-          text: "Clickkart",
+          text: "Clickcart",
           textColor: Colors.white,
           fontWeight: FontWeight.bold,
         ),

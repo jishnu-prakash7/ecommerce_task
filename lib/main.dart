@@ -2,9 +2,8 @@ import 'package:ecommerce/core/dependencies/dependencies.dart';
 import 'package:ecommerce/core/utils/size_config.dart';
 import 'package:ecommerce/core/utils/size_helper.dart';
 import 'package:ecommerce/features/cart/domain/entities/cart_item_entity.dart';
-import 'package:ecommerce/features/products_list/presentation/pages/products_list_screen.dart';
+import 'package:ecommerce/features/splash/splash_screen.dart';
 import 'package:ecommerce/features/wishlist/domain/entities/wishlist_item_entity.dart';
-import 'package:ecommerce/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Ecommerce',
+      title: 'Clickcart',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -49,7 +48,7 @@ class MyApp extends StatelessWidget {
         );
         return MediaQuery(data: data, child: child!);
       },
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }

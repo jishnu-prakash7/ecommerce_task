@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/features/products_list/domain/entities/products_list_entity.dart';
 
 class ProductsListModel extends ProductsListEntity {
@@ -12,9 +11,8 @@ class ProductsListModel extends ProductsListEntity {
     required super.rating,
   });
 
-  /// JSON → Model
   factory ProductsListModel.fromJson(Map<String, dynamic> json) =>
-      ProductsListModel( 
+      ProductsListModel(
         id: json["id"] ?? 0,
         title: json["title"] ?? '',
         price: (json["price"] ?? 0),
@@ -24,8 +22,7 @@ class ProductsListModel extends ProductsListEntity {
         rating: Rating.fromJson(json["rating"] ?? {}),
       );
 
-  /// Entity → Model
-  factory ProductsListModel.fromEntity(ProductsListEntity entity) =>
+    factory ProductsListModel.fromEntity(ProductsListEntity entity) =>
       ProductsListModel(
         id: entity.id,
         title: entity.title,
@@ -36,7 +33,6 @@ class ProductsListModel extends ProductsListEntity {
         rating: Rating.fromEntity(entity.rating),
       );
 
-  /// Model → JSON
   Map<String, dynamic> toJson() => {
     "id": id,
     "title": title,
@@ -47,7 +43,6 @@ class ProductsListModel extends ProductsListEntity {
     "rating": (rating as Rating).toJson(),
   };
 
-  /// Model → Entity
   ProductsListEntity toEntity() => ProductsListEntity(
     id: id,
     title: title,
@@ -62,17 +57,13 @@ class ProductsListModel extends ProductsListEntity {
 class Rating extends RatingEntity {
   Rating({required super.rate, required super.count});
 
-  /// JSON → Model
   factory Rating.fromJson(Map<String, dynamic> json) =>
-      Rating(rate: (json["rate"] ?? 0), count: json["count"]??0);
+      Rating(rate: (json["rate"] ?? 0), count: json["count"] ?? 0);
 
-  /// Entity → Model
   factory Rating.fromEntity(RatingEntity entity) =>
       Rating(rate: entity.rate, count: entity.count);
 
-  /// Model → JSON
   Map<String, dynamic> toJson() => {"rate": rate, "count": count};
 
-  /// Model → Entity
   RatingEntity toEntity() => RatingEntity(rate: rate, count: count);
 }
